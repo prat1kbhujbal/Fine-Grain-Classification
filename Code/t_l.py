@@ -1,7 +1,7 @@
-import matplotlib.pyplot as plt
-import tensorflow_hub as hub
-import tensorflow as tf
 import seaborn as sn
+import tensorflow as tf
+import tensorflow_hub as hub
+import matplotlib.pyplot as plt
 
 class TF():
     trainable = False
