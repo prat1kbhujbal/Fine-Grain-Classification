@@ -4,6 +4,10 @@ import tensorflow as tf
 import os
 import seaborn as sn
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = "2"
+# tf.python.util.deprecation._PRINT_DEPRECATION_WARNINGS = False
+
+
 class TF():
     trainable = False
 
