@@ -61,3 +61,26 @@ class Simple_CNN(tf.keras.Model):
             loss="categorical_crossentropy",
             metrics=['accuracy'])
 
+    def plot(self, c_m, history):
+        plt.figure(1, figsize=(10, 7))
+        sn.heatmap(c_m, annot=True, fmt='d', cmap="Blues")
+        plt.title("Confusion Matrix")
+        plt.xlabel('Predicted')
+        plt.ylabel('Truth')
+        plt.figure(2, figsize=(12, 9))
+        plt.subplot(211)
+        plt.plot(history.history['accuracy'])
+        plt.plot(history.history['val_accuracy'])
+        plt.title('Accuracy')
+        plt.ylabel('accuracy')
+        plt.xlabel('Epoch')
+        plt.legend(['train', 'test'])
+
+        plt.subplot(212)
+        plt.plot(history.history['loss'])
+        plt.plot(history.history['val_loss'])
+        plt.title('Loss')
+        plt.ylabel('loss')
+        plt.xlabel('Epoch')
+        plt.legend(['train', 'test'])
+        plt.show()
