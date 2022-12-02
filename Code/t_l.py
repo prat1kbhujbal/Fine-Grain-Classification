@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import tensorflow_hub as hub
 import tensorflow as tf
-import os
 import seaborn as sn
 
 class TF():
