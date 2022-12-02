@@ -1,10 +1,11 @@
 import os
 import numpy as np
 import tensorflow as tf
-from simple_cnn import Simple_CNN
 from t_l import TF
+from simple_cnn import Simple_CNN
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+
 
 def main():
     t_s = (224, 224)
