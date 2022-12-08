@@ -1,4 +1,6 @@
 import os
+import sys
+import argparse
 import numpy as np
 import tensorflow as tf
 from t_l import TL
@@ -8,8 +10,14 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 
 def main():
+
+    parse = argparse.ArgumentParser()
+    parse.add_argument(
+        '--Method', default='tranfer_learning',
+        help='method')
+    args = parse.parse_args()
+    method = args.Method
     t_s = (224, 224)
-    method = "simple_snn"
     training_direc = '../Data/training/training'
     test_direc = '../Data/validation/validation'
     train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
@@ -89,6 +97,8 @@ def main():
         c_m = tf.math.confusion_matrix(
             labels=test_generator.labels, predictions=y_predicted_labels)
         tl.plot(c_m, history_ft, 3)
+    else:
+        sys.exit("!!!Please provode valid method!!!")
 
 
 if __name__ == '__main__':
