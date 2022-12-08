@@ -73,7 +73,7 @@ class Simple_CNN(tf.keras.Model):
         plt.title('Accuracy')
         plt.ylabel('accuracy')
         plt.xlabel('Epoch')
-        plt.legend(['train', 'test'])
+        plt.legend(['train', 'validation'])
 
         plt.subplot(212)
         plt.plot(history.history['loss'])
@@ -81,5 +81,5 @@ class Simple_CNN(tf.keras.Model):
         plt.title('Loss')
         plt.ylabel('loss')
         plt.xlabel('Epoch')
-        plt.legend(['train', 'test'])
+        plt.legend(['train', 'validation'])
         plt.show()

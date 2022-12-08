@@ -3,7 +3,7 @@ import tensorflow as tf
 import tensorflow_hub as hub
 import matplotlib.pyplot as plt
 
-class TF():
+class TL():
     trainable = False
 
     def __init__(self, model, num_classes) -> None:
@@ -49,7 +49,7 @@ class TF():
         plt.title('Accuracy')
         plt.ylabel('accuracy')
         plt.xlabel('Epoch')
-        plt.legend(['train', 'test'])
+        plt.legend(['train', 'validation'])
 
         plt.subplot(212)
         plt.plot(history.history['loss'])
@@ -57,6 +57,6 @@ class TF():
         plt.title('Loss')
         plt.ylabel('loss')
         plt.xlabel('Epoch')
-        plt.legend(['train', 'test'])
+        plt.legend(['train', 'validation'])
         if i != 0:
             plt.show()

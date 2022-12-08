@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import tensorflow as tf
-from t_l import TF
+from t_l import TL
 from simple_cnn import Simple_CNN
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
@@ -9,7 +9,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 def main():
     t_s = (224, 224)
-    method = "tranfer_learning"
+    method = "simple_snn"
     training_direc = '../Data/training/training'
     test_direc = '../Data/validation/validation'
     train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
@@ -62,13 +62,14 @@ def main():
         model.plot(c_m, history)
     elif method == "tranfer_learning":
         pretrained_model = "https://tfhub.dev/google/imagenet/resnet_v2_50/feature_vector/5"
-        tl = TF(pretrained_model, 10)
+        tl = TL(pretrained_model, 10)
         model = tl.model()
-        tl.optimizer(model, lr=1e-3)
+        tl.optimizer(model, l_r=1e-3)
         history = model.fit(
             train_generator,
             epochs=5,
             validation_data=validation_generator)
+        print("Evaluation on test data")
         model.evaluate(test_generator)
         y_predicted = model.predict(test_generator, verbose=0)
         y_predicted_labels = [np.argmax(i) for i in y_predicted]
@@ -76,11 +77,12 @@ def main():
             labels=test_generator.labels, predictions=y_predicted_labels)
         tl.plot(c_m, history)
         model.trainable = True
-        tl.optimizer(model, lr=1e-4)
+        tl.optimizer(model, l_r=1e-4)
         history_ft = model.fit(
             train_generator,
             epochs=5,
             validation_data=validation_generator)
+        print("Evaluation on test data")
         model.evaluate(test_generator)
         y_predicted = model.predict(test_generator, verbose=0)
         y_predicted_labels = [np.argmax(i) for i in y_predicted]
