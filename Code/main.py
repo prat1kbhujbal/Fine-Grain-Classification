@@ -6,6 +6,7 @@ import tensorflow as tf
 from t_l import TL
 from simple_cnn import Simple_CNN
 
+
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 
@@ -14,7 +15,7 @@ def main():
     parse = argparse.ArgumentParser()
     parse.add_argument(
         '--Method', default='tranfer_learning',
-        help='method')
+        help='method for classification')
     args = parse.parse_args()
     method = args.Method
     t_s = (224, 224)
