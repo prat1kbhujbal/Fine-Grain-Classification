@@ -19,8 +19,8 @@ def main():
     args = parse.parse_args()
     method = args.Method
     t_s = (224, 224)
-    training_direc = '../Data/training/training'
-    test_direc = '../Data/validation/validation'
+    training_direc = './Data/training/training'
+    test_direc = './Data/validation/validation'
     train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
         rotation_range=30,
         shear_range=0.2,

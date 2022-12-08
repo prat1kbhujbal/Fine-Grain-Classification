@@ -8,14 +8,14 @@ Fine-Grained Image Classification on monkey species using simple CNN and transfe
 ## To run the code
 ### Simple CNN
 ```bash
-python3 main.py --Method simple_cnn
+python3 Code/main.py --Method simple_cnn
 ```
 -  Parameters  
     - Method - method for classification. *Default :- 'tranfer_learning'*
 
 ### Tranfer learning
 ```bash
-python3 main.py --Method tranfer_learning
+python3 Code/main.py --Method tranfer_learning
 ```
 -  Parameters  
     - Method - method for classification. *Default :- 'tranfer_learning'*
