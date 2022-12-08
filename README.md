@@ -6,6 +6,7 @@ Fine-Grained Image Classification on monkey species using simple CNN and transfe
 [**10 Monkey Species**](https://www.kaggle.com/slothkong/10-monkey-species/home)
 
 ## To run the code
+cd into root directory
 ### Simple CNN
 ```bash
 python3 Code/main.py --Method simple_cnn
