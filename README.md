@@ -1,6 +1,6 @@
 # Fine-Grain-Classification
 ## Overview
-Fine-Grained Image Classification on monkey species using simple CNN and transfer learning.
+Fine-Grain Image Classification on monkey species using simple CNN and transfer learning.
 
 ## Dataset
 [**10 Monkey Species**](https://www.kaggle.com/slothkong/10-monkey-species/home)
